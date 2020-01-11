@@ -1,0 +1,27 @@
+body {
+  font-size: 85%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 100%;
+  text-align: right;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  color: #360;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 160%;
+  font-weight: normal;
+  height: 50px;
+  padding: 0 0 0 20px;
+  color: #006600
+}

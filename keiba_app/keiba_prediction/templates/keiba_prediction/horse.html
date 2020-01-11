@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'keiba_prediction/css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <p>{{message | safe}}</p>
+    <table border="1">
+        <tr>馬名</tr>
+            <th>ID</th>
+            <th>馬名</th>
+            <th>父親</th>
+            <th>母親</th>
+            <th>父祖父</th>
+            <th>父祖母</th>
+            <th>母祖父</th>
+            <th>母祖母</th>
+            <th>年齢</th>
+    {% for item in data%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.horse }}</td>
+            <td>{{ item.f_horse }}</td>
+            <td>{{ item.m_horse }}</td>
+            <td>{{ item.ff_horse }}</td>
+            <td>{{ item.fm_horse }}</td>
+            <td>{{ item.mf_horse }}</td>
+            <td>{{ item.mm_horse }}</td>
+            <td>{{ item.age }}</td>
+            <td><a href="{% url 'edit' item.id %}">Edit</a></td>
+
+        </tr>
+    {% endfor %}
+    </table>
+<a href="{% url 'index' %}">Indexへ戻る</a>
+</body>
+</html>
